@@ -1,5 +1,6 @@
 package com.chencs.controller;
 
+import com.chencs.aspect.ControllerLog;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping("/hello")
+    @ControllerLog
     public String hello() {
         return "hello world";
     }
