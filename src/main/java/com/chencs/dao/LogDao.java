@@ -1,6 +1,9 @@
 package com.chencs.dao;
 
 import com.chencs.entity.Log;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -10,12 +13,16 @@ import java.util.List;
  * @author chencs
  * @since 2018/5/4
  */
+@CacheConfig(cacheNames = "logs", keyGenerator = "wiselyKeyGenerator")
 public interface LogDao {
 
+    @CachePut
     void save(Log log);
 
+    @Cacheable
     List<Log> queryList(int offset, int pageSize);
 
-    Log queryOne(Long id);
+    @Cacheable
+    Log queryOne(long id);
 
 }
