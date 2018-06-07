@@ -69,7 +69,6 @@ public class RedisConfig {
                 return sb.toString();
             }
         };
-
     }
 
 }

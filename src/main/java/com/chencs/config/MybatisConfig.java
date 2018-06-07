@@ -12,4 +12,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.chencs.dao")
 public class MybatisConfig {
+
 }
