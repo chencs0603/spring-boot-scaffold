@@ -8,6 +8,23 @@ spring:
     username: scaffold_server
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      max-active: 10
+      min-idle: 5
+      max-wait: 6000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      filter: stat-view-servlet
+      stat-view-servlet:
+        url-pattern: /druid/*
+        login-username: chencs
+        login-password: 123456
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
