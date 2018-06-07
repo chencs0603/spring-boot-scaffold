@@ -10,4 +10,14 @@
 		VALUE (#{ip}, #{url}, #{method}, #{params}, #{result}, #{spendTime}, #{createTime});
 	</insert>
 
+	<select id="queryList" resultType="com.chencs.entity.Log">
+		SELECT id, ip, url, method, params, result, spend_time, create_time FROM log
+		LIMIT #{arg0}, #{arg1}
+	</select>
+
+	<select id="queryOne" resultType="com.chencs.entity.Log">
+		SELECT id, ip, url, method, params, result, spend_time, create_time FROM log
+		WHERE id = #{id}
+	</select>
+
 </mapper>

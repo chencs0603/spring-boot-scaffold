@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: chencs
@@ -20,5 +21,11 @@ public class LogDaoTest extends ApplicationTests {
     public void save() {
         Log log = new Log("127.0.0.1", "/hello", "hello", "", "", 12, new Date());
         logDao.save(log);
+    }
+
+    @Test
+    public void queryList() {
+        List<Log> logList = logDao.queryList(0, 10);
+
     }
 }

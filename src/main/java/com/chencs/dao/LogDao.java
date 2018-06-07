@@ -2,6 +2,8 @@ package com.chencs.dao;
 
 import com.chencs.entity.Log;
 
+import java.util.List;
+
 /**
  * 日志Dao接口
  *
@@ -11,5 +13,9 @@ import com.chencs.entity.Log;
 public interface LogDao {
 
     void save(Log log);
+
+    List<Log> queryList(int offset, int pageSize);
+
+    Log queryOne(Long id);
 
 }
