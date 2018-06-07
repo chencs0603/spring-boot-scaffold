@@ -18,9 +18,10 @@ import java.util.Date;
 import java.util.Map;
 
 /**
+ * 日志切面
+ *
  * @author: chencs
  * @date: 2018/5/15
- * @description:
  */
 @Aspect
 @Component

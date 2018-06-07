@@ -3,9 +3,10 @@ package com.chencs.aspect;
 import java.lang.annotation.*;
 
 /**
+ * 注解
+ *
  * @author: chencs
  * @date: 2018/5/15
- * @description:
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
