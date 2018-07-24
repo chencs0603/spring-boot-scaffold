@@ -1,6 +1,8 @@
 package com.chencs.controller;
 
 import com.chencs.aspect.ControllerLog;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,14 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     @ControllerLog
+    @ApiOperation(value = "hello world", notes = "hello world")
     public String hello() {
         return "hello world";
     }
 
-    @RequestMapping("/exception")
+    @GetMapping("/exception")
     @ControllerLog
+    @ApiOperation(value = "抛出异常", notes = "抛出异常")
     public String exception() {
         throw new RuntimeException();
     }
